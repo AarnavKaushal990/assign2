@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GowthTech Solutions</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #c50606;
+    }
+
+    header {
+      background-color: #031b36;
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+
+    .login-page, .dashboard-page {
+      display: none;
+    }
+
+    .login-page {
+      display: block;
+      height: 100vh;
+      background-color: #df4040;
+      padding-top: 100px;
+    }
+
+    .login-container {
+      max-width: 400px;
+      margin: auto;
+      background-color: #866aea;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .dashboard-page {
+      background-color: #c50606;
+      padding-top: 20px;
+    }
+
+    .team-section {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 30px;
+      margin-bottom: 50px;
+    }
+
+    .team {
+      background-color: #cc4343;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 22%;
+      margin-bottom: 20px;
+    }
+
+    .team h3 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .team-member {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .team-member img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .project-status {
+      font-weight: bold;
+      color: #fff;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    .pending {
+      background-color: orange;
+    }
+
+    .not-completed {
+      background-color: red;
+    }
+
+    .completed {
+      background-color: green;
+    }
+
+    .progress-container {
+      margin: 10px 0;
+    }
+
+    .department {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .progress-bar {
+      height: 15px;
+      background-color: #28a745;
+      transition: width 0.3s;
+    }
+
+    .site-details {
+      font-size: 0.9rem;
+      color: #333;
+      margin-top: 5px;
+    }
+
+    @media (max-width: 768px) {
+      .team {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .team {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+
+  <!-- Login Page -->
+  <div class="login-page">
+    <header>
+      <h1>Growth Solutions - Login</h1>
+    </header>
+    <div class="login-container">
+      
+      <h2 class="text-center">Login</h2>
+      <form id="loginForm">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" id="username" required>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" required>
+        </div>
+        <div class="mb-3">
+          <label for="userType" class="form-label">Login As</label>
+          <select id="userType" class="form-select" required>
+            <option value="admin">Admin</option>
+            <option value="employee">Employee</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Login</button>
+      </form>
+    </div>
+  </div>
+  <div class="dashboard-page page"></div>
+    <header>
+      
+      <nav>
+        <ul class="nav">
+          <li class="nav-item">
+           
+          </li>
+          <li class="nav-item">
+            
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+  <!-- Dashboard Page -->
+ 
+    <!-- Header -->
+    <header>
+      <h1>GrowthProduction - Project Dashboard</h1>
+    </header>
+
+    <!-- Team Section -->
+    <div class="team-section">
+
+        <div class="team">
+            <h3>Team 1</h3>
+            <!-- Progress Bar for Team -->
+            <div class="progress-container">
+              <p>Team Progress: <strong>75%</strong></p>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+      
+            <div class="team-member">
+              <img src="https://stockarea.io/blogs/wp-content/uploads/2021/04/photo3-1024x1024.png" alt="Project Image">
+              <p>Olivia Bennett - <span class="project-status pending">Pending</span></p>
+              <p class="department">Department: Design</p>
+              <p class="site-details">Site: eCommerce Store</p>
+              <!-- Member Progress Bar -->
+              <div class="progress-container">
+                <p>Progress: <strong>25%</strong></p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+      
+            <div class="team-member">
+              <img src="https://businessesgrow.com/wp-content/uploads/2014/11/adp-1024x646.jpg" alt="Project Image">
+              <p>Ethan Carter - <span class="project-status completed">Completed</span></p>
+              <p class="department">Department: Development</p>
+              <p class="site-details">Site: Company Blog</p>
+              <!-- Member Progress Bar -->
+              <div class="progress-container">
+                <p>Progress: <strong>100%</strong></p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+      
+            <div class="team-member">
+              <img src="https://i.ytimg.com/vi/Dtb3DdSvYRY/maxresdefault.jpg" alt="Project Image">
+              <p>Ava Thompson- <span class="project-status not-completed">Not Completed</span></p>
+              <p class="department">Department: QA</p>
+              <p class="site-details">Site: Portfolio Page</p>
+              <!-- Member Progress Bar -->
+              <div class="progress-container">
+                <p>Progress: <strong>50%</strong></p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+      
+            <div class="team-member">
+              <img src="https://landingi.com/wp-content/uploads/2023/02/4-5.png" alt="Project Image">
+              <p>Liam Parker - <span class="project-status completed">Completed</span></p>
+              <p class="department">Department: Marketing</p>
+              <p class="site-details">Site: Client Landing Page</p>
+              <!-- Member Progress Bar -->
+              <div class="progress-container">
+                <p>Progress: <strong>100%</strong></p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Team 2 -->
+          <div class="team">
+            <h3>Team 2</h3>
+            <!-- Progress Bar for Team -->
+            <div class="progress-container">
+              <p>Team Progress: <strong>50%</strong></p>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+      
+            <div class="team-member">
+              <img src="https://blog.zoho.com/sites/zblogs/images/recruit/client-portal02-2019-04.jpg" alt="Project Image">
+              <p>Sophia Walker
+                - <span class="project-status not-completed">Not Completed</span></p>
+              <p class="department">Department: HR</p>
+              <p class="site-details">Site: Recruitment Portal</p>
+              <!-- Member Progress Bar -->
+              <div class="progress-container">
+                <p>Progress: <strong>40%</strong></p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+      
+            <div class="team-member">
+              <img src="https://s.tmimgcdn.com/scr/1200x627/327800/product-catalogue-or-catalog-design_327802-original.jpg" alt="Project Image">
+              <p>Noah Johnson- <span class="project-status pending">Pending</span></p>
+              <p class="department">Department: Sales</p>
+              <p class="site-details">Site: Product Catalogue</p>
+              <!-- Member Progress Bar -->
+              <div class="progress-container">
+                <p>Progress: <strong>10%</strong></p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: 10%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+      
+            <div class="team-member">
+              <img src="https://d1eipm3vz40hy0.cloudfront.net/images/AMER/faqpage115.jpg" alt="Project Image">
+              <p>Mia Evans - <span class="project-status completed">Completed</span></p>
+              <p class="department">Department: Support</p>
+              <p class="site-details">Site: FAQ Page</p>
+              <!-- Member Progress Bar -->
+              <div class="progress-container">
+                <p>Progress: <strong>100%</strong></p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+      
+            <div class="team-member">
+              <img src="https://cdn1.dronahq.com/wp-content/uploads/2024/01/internal-tools-examples-different-types-of-internal-tools-1.jpg" alt="Project Image">
+              <p>Lucas Harris - <span class="project-status pending">Pending</span></p>
+              <p class="department">Department: IT</p>
+              <p class="site-details">Site: Internal Tools</p>
+              <!-- Member Progress Bar -->
+              <div class="progress-container">
+                <p>Progress: <strong>30%</strong></p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Team 3 -->
+          <div class="team">
+            <h3>Team 3</h3>
+            <!-- Progress Bar for Team -->
+            <div class="progress-container">
+              <p>Team Progress: <strong>60%</strong></p>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+      
+            <div class="team-member">
+              <img src="https://cdn.boldbi.com/wp/pages/dashboards/hr/hr-employee-attendance-details-v1-thumbnail.webp" alt="Project Image">
+               
+                <p>Isabella Clark
+                  - <span class="project-status completed">Completed</span></p>
+              <p class="department">Department: IT</p>
+              <p class="site-details">Site: Employee Dashboard</p>
+              <!-- Member Progress Bar -->
+              <div class="progress-container">
+                <p>Progress: <strong>100%</strong></p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+      
+            <div class="team-member">
+              <img src="https://designmodo.com/wp-content/uploads/2018/08/1-Modern-Branding-Identity-Mockup-Vol.2.jpg" alt="Project Image">
+              <p>Mason Turner - <span class="project-status pending">Pending</span></p>
+              <p class="department">Department: Design</p>
+              <p class="site-details">Site: Design Mockups</p>
+              <!-- Member Progress Bar -->
+              <div class="progress-container">
+                <p>Progress: <strong>20%</strong></p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+      
+            <div class="team-member">
+              <img src="https://cdn.prod.website-files.com/64be86eaa29fa71f24b00685/6566021e312a8bb43bae53a5_How%20Workflow%20Automation%20Transforms%20Modern%20Business_%20(1).jpg" alt="Project Image">
+              <p>Amelia Edwards - <span class="project-status not-completed">Not Completed</span></p>
+              <p class="department">Department: Operations</p>
+              <p class="site-details">Site: Workflow Automation</p>
+              <!-- Member Progress Bar -->
+              <div class="progress-container">
+                <p>Progress: <strong>50%</strong></p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+      
+            <div class="team-member">
+              <img src="https://images.ctfassets.net/8cjpn0bwx327/5INWfUurvcWEj4jjjvRyaM/8a100d9cd3a6f11ffe034b9ba28ec7f3/istock-1061323160-scaled-1200x800.jpg" alt="Project Image">
+              <p>James Foster - <span class="project-status completed">Completed</span></p>
+              <p class="department">Department: QA</p>
+              <p class="site-details">Site: Bug Tracking System</p>
+              <!-- Member Progress Bar -->
+              <div class="progress-container">
+                <p>Progress: <strong>100%</strong></p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Team 4 -->
+          <div class="team">
+            <h3>Team 4</h3>
+            <!-- Progress Bar for Team -->
+            <div class="progress-container">
+              <p>Team Progress: <strong>80%</strong></p>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+      
+            <div class="team-member">
+              <img src="https://prioritypixels.co.uk/wp-content/uploads/2022/02/best-corporate-websites-2022.jpg" alt="Project Image">
+              <p>Harper Robinson - <span class="project-status completed">Completed</span></p>
+              <p class="department">Department: Development</p>
+              <p class="site-details">Site: Corporate Website</p>
+              <!-- Member Progress Bar -->
+              <div class="progress-container">
+                <p>Progress: <strong>100%</strong></p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+      
+            <div class="team-member">
+              <img src="https://images.klipfolio.com/website/public/4d789bf2-a6d2-45ea-87e7-38e131f9d354/sales%20dashboard.png" alt="Project Image">
+              <p>Elijah Cooper - <span class="project-status pending">Pending</span></p>
+              <p class="department">Department: Sales</p>
+              <p class="site-details">Site: Sales Dashboard</p>
+              <!-- Member Progress Bar -->
+              <div class="progress-container">
+                <p>Progress: <strong>50%</strong></p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+      
+            <div class="team-member">
+              <img src="https://cdn.sanity.io/images/grix75fu/production/cb7cf442f22246d4cab3a5eed37e5c90f65acc20-1024x846.jpg?w=2048&q=75&fit=clip&auto=format" alt="Project Image">
+              <p>Charlotte King - <span class="project-status completed">Completed</span></p>
+              <p class="department">Department: HR</p>
+              <p class="site-details">Site: Employee Directory</p>
+              <!-- Member Progress Bar -->
+              <div class="progress-container">
+                <p>Progress: <strong>100%</strong></p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+      
+            <div class="team-member">
+              <img src="https://axissoftwaredynamics.com/wp-content/uploads/2022/11/1_fJjQOPz-PdJjRqefaBV13Q.jpeg" alt="Project Image">
+              <p>Henry Adams - <span class="project-status not-completed">Not Completed</span></p>
+              <p class="department">Department: QA</p>
+              <p class="site-details">Site: Test Automation</p>
+              <!-- Member Progress Bar -->
+              <div class="progress-container">
+                <p>Progress: <strong>60%</strong></p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+        </div>
+       
+      
+          
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const userType = document.getElementById('userType').value;
+
+      // Basic authentication check (For demonstration purposes only)
+      if (username === 'admin' && password === 'adminpass' && userType === 'admin') {
+        document.querySelector('.login-page').style.display = 'none';
+        document.querySelector('.dashboard-page').style.display = 'block';
+      } else if (username === 'employee' && password === 'employeepass' && userType === 'employee') {
+        document.querySelector('.login-page').style.display = 'none';
+        document.querySelector('.dashboard-page').style.display = 'block';
+      } else {
+        alert('Invalid credentials or user type');
+      }
+    });
+  </script>
+</body>
+</html>
